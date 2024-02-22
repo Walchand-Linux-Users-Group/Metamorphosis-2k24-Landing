@@ -6,10 +6,8 @@ const Himu_planet = () => {
     const texture = useTexture('/Planets/neon_text1.png')
     const meshRef = useRef();
 
-    // Rotate the planet continuously
     useEffect(() => {
         const animateRotation = () => {
-            console.log("Animating rotation...");
             if (meshRef.current) {
                 meshRef.current.rotation.y += 0.005; // Adjust rotation speed as needed
             }
