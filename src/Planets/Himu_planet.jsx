@@ -9,7 +9,7 @@ const Himu_planet = () => {
     useEffect(() => {
         const animateRotation = () => {
             if (meshRef.current) {
-                meshRef.current.rotation.y += 0.005; // Adjust rotation speed as needed
+                meshRef.current.rotation.x += 0.005; // Adjust rotation speed as needed
             }
             requestAnimationFrame(animateRotation);
         };
