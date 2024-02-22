@@ -1,16 +1,37 @@
 import { useGLTF, useTexture } from '@react-three/drei';
-import React from 'react'
-
+import React, { useEffect, useRef } from 'react'
 const Himu_planet = () => {
-    const uranus = useGLTF('/Planets/Himu/bluePlanet.glb')
     const { nodes } = useGLTF('/Planets/Himu/bluePlanet.glb')
-    const texture = useTexture('/Planets/Himu/himu.png')
+    // const texture = useTexture('/Planets/1.png')
+    const texture = useTexture('/Planets/neon_text1.png')
+    const meshRef = useRef();
 
-    console.log(nodes);
+    // Rotate the planet continuously
+    useEffect(() => {
+        const animateRotation = () => {
+            console.log("Animating rotation...");
+            if (meshRef.current) {
+                meshRef.current.rotation.y += 0.005; // Adjust rotation speed as needed
+            }
+            requestAnimationFrame(animateRotation);
+        };
+
+        animateRotation(); // Start animation loop
+
+        return () => cancelAnimationFrame(animateRotation);
+    }, []);
+
     return (
         <>
             {/* <primitive object={uranus.scene} position={[-100, 20, 0]} scale={10} /> */}
-            <mesh geometry={nodes.Blue_Giant.geometry} position={[-100, 20, 0]} rotation={[-0.44, 0.29, 1.18]} scale={10} >
+            {/*Rotate this mesh as a planet*/}
+            <mesh
+                geometry={nodes.Blue_Giant.geometry}
+                position={[-400.76, 110.44, -400.83]}
+                rotation={[-0.44, 0.29, 1.18]}
+                scale={50} 
+                ref={meshRef}
+            >
                 <meshBasicMaterial map={texture} map-flipY={false} />
             </mesh>
         </>

@@ -1,6 +1,5 @@
 import { OrbitControls, useHelper, useGLTF, useTexture, Center, Sparkles, shaderMaterial, useFBO, Sky, Stars } from '@react-three/drei';
 import * as THREE from 'three';
-import { Perf } from 'r3f-perf';
 import portalVShader from '../shaders/portal/vertex.js'
 import portalFShader from '../shaders/portal/fragment.js'
 import { extend, useFrame } from '@react-three/fiber';
@@ -18,6 +17,8 @@ const PortalMaterial = shaderMaterial(
 extend({ PortalMaterial: PortalMaterial })
 
 const Portal = () => {
+    const textii = useGLTF('/Planets/MetaText.glb')
+
     const [text, setText] = useState('METAMORPHOSIS');
     const [hovered, setHovered] = useState(false);
 
@@ -34,6 +35,8 @@ const Portal = () => {
     }
     const { nodes } = useGLTF('./Portal/portal.glb')
     const bakedTexture = useTexture('./Portal/canva_baked3.png');
+    const textTexture = useTexture('./Planets/neon_text2.png');
+    // console.log(textTexture);
     const portalMaterial = useRef()
     useFrame((state, delta) => {
         portalMaterial.current.uniforms.uTime.value += delta
@@ -44,7 +47,6 @@ const Portal = () => {
             <color args={['#000000']} attach="background" />
             <Stars />
             <color args={['#000000']} attach="background" />
-            <Perf position='top-left' />
             {/* <OrbitControls /> */}
             <group position={[0, -2, -8]} scale={5}>
                 <mesh geometry={nodes.baked.geometry}>
@@ -78,10 +80,11 @@ const Portal = () => {
                     // bevelEnabled
                     rotation={[Math.PI/8,0,0]}
                 >
-                    <meshBasicMaterial map={bakedTexture}  />
+                    <meshBasicMaterial map={textTexture} map-flipY={false}   />
                     {text}
                 </Text3D>
             </group>
+             {/* <primitive object={textii.scene} position={[0,200,-150]} scale={2} /> */}
 
         </>
     )

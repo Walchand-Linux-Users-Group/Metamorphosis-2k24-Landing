@@ -8,7 +8,6 @@ import Himu_planet from '../Planets/Himu_planet'
 
 const Planets = () => {
     const { nodes } = useGLTF('/Planets/scene.glb')
-    console.log();
     const rocketTexture = useTexture('/Planets/rocket2.png')
     return (
         <>
@@ -17,6 +16,8 @@ const Planets = () => {
             </mesh>
             <Uranus />
             <Himu_planet />
+           
+
        </>
     )
 }

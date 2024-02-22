@@ -38,7 +38,8 @@ const Exp = ({ explore3D, isMouseDown }) => {
         useFrame((state, delta) => {
             // console.log(state.camera.position)
             // if(!isMouseDown){
-            easing.damp3(state.camera.position, [-3, 4, 21], 2, delta)
+            state.camera.lookAt(0, 10, 0)
+            easing.damp3(state.camera.position, [-3, 0, 25], 2, delta)
             //   setSnpped(true)
             // }
         })
@@ -64,9 +65,10 @@ const Exp = ({ explore3D, isMouseDown }) => {
             stopDamp = true;
         }, 3000)
         useFrame((state, delta) => {
-            console.log(state.camera.position)
+            // console.log(state.camera.position)
             // if(!isSnapped){
-            !stopDamp && easing.damp3(state.camera.position, [9,4,0], 2, delta)
+            state.camera.lookAt(0, 5, 0)
+            !stopDamp && easing.damp3(state.camera.position, [2,-5,0], 2, delta)
 
             // {x: 15.464951184826836, y: 12.210116761292216, z: 13.56001786712231, __damp: {…}}
             //   setSnpped(true)
@@ -83,7 +85,7 @@ const Exp = ({ explore3D, isMouseDown }) => {
             // // enableZoom={isMobile ? false : true}
             // enableZoom={false}
             enableDamping
-            maxDistance={30}
+            maxDistance={50}
             minDistance={13}
         // enablePan={false}
         // makeDefault
@@ -98,6 +100,7 @@ const Exp = ({ explore3D, isMouseDown }) => {
     }, [])
 
     function CamControlDispatcher() {
+        // console.log(isPhone, "isPhone");
         if (explore3D) {
             // console.log("pcorbitcontroller")
             return <PCOrbitController />
@@ -116,8 +119,7 @@ const Exp = ({ explore3D, isMouseDown }) => {
             <Portal />
             <Planets />
             {/* <OrbitControls /> */}
-            <ambientLight intensity={5} />
-            {/* <ambientLight intensity={0.5} /> */}
+            <ambientLight intensity={1} />
             <CamControlDispatcher />
         </>
     )
