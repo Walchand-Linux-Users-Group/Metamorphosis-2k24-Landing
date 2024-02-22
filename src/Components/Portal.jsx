@@ -68,7 +68,7 @@ const Portal = () => {
                 >
                     <portalMaterial ref={portalMaterial} />
                 </mesh>
-                <Sparkles size={25} scale={[4, 2, 4]} position-y={1} speed={0.5} />
+                <Sparkles size={25} scale={[4, 2, 4]} position-y={1} speed={2} />
             </group>
             <group position={[-130, 100, -150]}>
                 <Text3D

@@ -12,7 +12,7 @@ function App() {
   const [showCheck, setShowCheck] = useState(true)
 
   const { loaded } = useProgress()
-
+console.log(loaded, "loaded");
   useEffect(() => {
     // console.log(loaded, "loaded")
     if (loaded >= 47) { // 45 as console log shows 46

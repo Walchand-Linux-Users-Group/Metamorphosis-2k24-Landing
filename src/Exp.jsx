@@ -7,21 +7,21 @@ import { useEffect, useRef, useState } from 'react';
 import { easing } from "maath"
 import { isMobile } from 'react-device-detect';
 const Exp = ({ explore3D, isMouseDown }) => {
-    const [isSnapped, setSnpped] = useState(false)
     const [rigDampSpeed, setRigSpeed] = useState(1.5)
     const initialCameraPosition = { x: 0, y: 0, z: 8 }
     const [cameraPosition, setCameraPosition] = useState(initialCameraPosition)
 
     function Rig() {
+        setTimeout(() => {
+            setRigSpeed(0.5)
+        }, 4000)
         return useFrame((state, delta) => { 
             state.camera.lookAt(0, 3, 0)
             easing.damp3(state.camera.position, [cameraPosition.x + state.mouse.x / 1, cameraPosition.y + state.mouse.y / 1, cameraPosition.z], rigDampSpeed, delta)
         })
     }
 
-    setTimeout(() => {
-        setRigSpeed(0.5)
-    }, 4000)
+    
 
     useEffect(() => {
         // console.log(explore3D)
@@ -91,8 +91,6 @@ const Exp = ({ explore3D, isMouseDown }) => {
         // makeDefault
         />
     }
-    
-    const ptLight = useRef()
     const [isPhone, setIsPhone] = useState(isMobile)
 
     useEffect(() => {
