@@ -31,14 +31,13 @@ const Planets = () => {
             <mesh
                 geometry={nodes.Rocket_Ship_01.geometry}
                 material={nodes.Rocket_Ship_01.material}
-                position={[350.76, 180.44, -400.83]}
-                rotation={[-0.44, 0.29, 1.18]} scale={1.5}
+                position={[35.76, 18.44, -40.83]}
+                rotation={[-0.44, 0.29, 1.18]} scale={0.15}
                 ref={meshRef}
                 onClick={() => rocketClicked()}
             >
                 <meshBasicMaterial map={rocketTexture} map-flipY={false} />
             </mesh>
-            <Uranus />
             <Himu_planet />
 
 
@@ -48,3 +47,5 @@ const Planets = () => {
 
 export default Planets
 
+
+{/* <Uranus /> */}
