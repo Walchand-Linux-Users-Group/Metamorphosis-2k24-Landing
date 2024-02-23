@@ -5,12 +5,11 @@ import { LayerMaterial, Depth } from 'lamina'
 import Uranus from '../Planets/Uranus'
 import Himu_planet from '../Planets/Himu_planet'
 import { useRef, useState } from 'react'
-
+import RandomComets from '../Planets/RandomComets'
 
 const Planets = () => {
     const { nodes } = useGLTF('/Planets/scene.glb')
     const rocketTexture = useTexture('/Planets/rocket2.png')
-    const meshRef = useRef()
     const [moving, setMoving] = useState(false)
     const rocketClicked = () => {
         if (moving) {
@@ -19,12 +18,28 @@ const Planets = () => {
         else
             setMoving(true)
     }
+    const rocketRef = useRef();
+
     useFrame((state, delta) => {
-        if (moving) {
-            meshRef.current.position.x += Math.sin(state.clock.getElapsedTime()) * 3
-            meshRef.current.position.y -= Math.sin(state.clock.getElapsedTime()) 
-        }
-    })
+        // Calculate rotation angle based on time
+        const angle = state.clock.getElapsedTime() * 2; // Adjust the speed of rotation as needed
+
+        // Calculate the rotation around a point other than the origin (0, 0, 0)
+        const centerX = 35.76; // x-coordinate of the center point
+        const centerY = 18.44; // y-coordinate of the center point
+        const centerZ = -40.83; // z-coordinate of the center point
+        const radius = 1; // Radius of the circular motion
+        const newX = centerX + radius * Math.cos(angle);
+        const newY = centerY + radius * Math.sin(angle);
+        const newZ = centerZ; // Assuming rotation is in the xy-plane
+
+        // Set the position of the rocket
+        rocketRef.current.position.set(newX, newY, newZ);
+
+        // Set the rotation of the rocket (adjust the Euler angles as needed)
+        rocketRef.current.rotation.set(-5, angle, 0);
+
+    });
 
     return (
         <>
@@ -33,13 +48,13 @@ const Planets = () => {
                 material={nodes.Rocket_Ship_01.material}
                 position={[35.76, 18.44, -40.83]}
                 rotation={[-0.44, 0.29, 1.18]} scale={0.15}
-                ref={meshRef}
+                ref={rocketRef}
                 onClick={() => rocketClicked()}
             >
                 <meshBasicMaterial map={rocketTexture} map-flipY={false} />
             </mesh>
             <Himu_planet />
-
+            <RandomComets numberOfComets={1000} />
 
         </>
     )
@@ -48,4 +63,4 @@ const Planets = () => {
 export default Planets
 
 
-{/* <Uranus /> */}
+{/* <Uranus /> */ }

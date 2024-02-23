@@ -4,7 +4,7 @@ import portalVShader from '../shaders/portal/vertex.js'
 import portalFShader from '../shaders/portal/fragment.js'
 import { extend, useFrame } from '@react-three/fiber';
 import { useRef, useState } from 'react';
-
+import { Link, useNavigate } from 'react-router-dom';
 import { Text3D } from '@react-three/drei'
 const PortalMaterial = shaderMaterial(
     {
@@ -17,8 +17,9 @@ const PortalMaterial = shaderMaterial(
 extend({ PortalMaterial: PortalMaterial })
 
 const Portal = () => {
+    const navigate = useNavigate()
     const textii = useGLTF('/Planets/MetaText.glb')
-
+    
     const [text, setText] = useState('METAMORPHOSIS');
     const [hovered, setHovered] = useState(false);
 
@@ -31,7 +32,8 @@ const Portal = () => {
         }
     };
     const portalClick = () => { 
-        console.log('Portal Clicked ! ! !');
+        navigate('/register');
+        console.log('Portal Clicked ! ! !'); 
     }
     const { nodes } = useGLTF('./Portal/portal.glb')
     const bakedTexture = useTexture('./Portal/canva_baked3.png');
@@ -41,6 +43,8 @@ const Portal = () => {
     useFrame((state, delta) => {
         portalMaterial.current.uniforms.uTime.value += delta
     })
+    // useNavigate('/register')
+    
     return (
         <>
 

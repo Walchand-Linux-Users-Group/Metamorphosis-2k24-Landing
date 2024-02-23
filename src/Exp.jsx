@@ -85,7 +85,7 @@ const Exp = ({ explore3D, isMouseDown }) => {
             // // enableZoom={isMobile ? false : true}
             // enableZoom={false}
             enableDamping
-            maxDistance={50}
+            maxDistance={250}
             minDistance={13}
         // enablePan={false}
         // makeDefault
