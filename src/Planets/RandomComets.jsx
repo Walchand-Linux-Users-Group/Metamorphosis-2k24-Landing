@@ -28,7 +28,7 @@ const Comet = ({ position }) => {
     (Math.random() - 0.5) * 5,
     (Math.random() - 0.5) * 5
   );
-  const tailSegments = 100; // Number of segments in the tail
+  const tailSegments = 1000; // Number of segments in the tail
   const tailGeometry = new THREE.BufferGeometry().setFromPoints(new Array(tailSegments).fill().map(() => new THREE.Vector3()));
   const tailPositions = tailGeometry.attributes.position.array;
 
@@ -55,7 +55,7 @@ const Comet = ({ position }) => {
     <group ref={cometRef} position={position}>
       <mesh>
         <sphereGeometry args={[2, 32, 32]} />
-        <meshBasicMaterial color="yellow" />
+        <meshBasicMaterial color="black" />
       </mesh>
       <group ref={tailRef} />
     </group>
