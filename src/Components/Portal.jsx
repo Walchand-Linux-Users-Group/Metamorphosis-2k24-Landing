@@ -33,7 +33,7 @@ const Portal = () => {
     };
     const portalClick = () => { 
         window.location.href = 'https://meta-registration.wcewlug.org/';
-        console.log('Portal Clicked ! ! !'); 
+        // console.log('Portal Clicked ! ! !'); 
     }
     const { nodes } = useGLTF('./Portal/portal.glb')
     const bakedTexture = useTexture('./Portal/canva_baked3.png');
@@ -86,6 +86,20 @@ const Portal = () => {
                 >
                     <meshBasicMaterial map={textTexture} map-flipY={false}   />
                     {text}
+                </Text3D>
+            </group>
+            <group position={[-70, 80, -150]}>
+                <Text3D
+                 font='./Fonts/JSON/Helios Pro_Regular.json' 
+                 size={0.75}
+                    // height={0.2}
+                    scale={10}
+                    curveSegments={1}
+                    // bevelEnabled
+                    rotation={[Math.PI/8,0,0]}
+                >
+                    <meshBasicMaterial map={textTexture} map-flipY={false}   />
+                    Click on Portal to Register
                 </Text3D>
             </group>
              {/* <primitive object={textii.scene} position={[0,200,-150]} scale={2} /> */}

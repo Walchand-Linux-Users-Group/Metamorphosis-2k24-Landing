@@ -25,7 +25,7 @@ function App() {
         <>
           <Loading />
         </>
-      }
+      } 
       {showCheck &&
         <div className='toggle-div'>
           <label className="label">
@@ -34,9 +34,17 @@ function App() {
                 setExplore3D(event.target.checked)
               }} />
               <div className="indicator"></div>
+              <div className="label-text">3D</div>
+              <div className="label-text">3D</div>
+              <div className="label-text">3D</div>
+              <div className="label-text">3D</div>
+              <div className="label-text">3D</div>
+              <div className="label-text">3D</div>
+              <div className="label-text">3D</div>
+              <div className="label-text">3D</div>
+              <div className="label-text">3D</div>
+              <div className="label-text">3D</div>
             </div>
-            <div className="label-text">Explore 3D</div>
-            <div className="label-text">To register, Click the portal</div>
           </label>
         </div>
 
