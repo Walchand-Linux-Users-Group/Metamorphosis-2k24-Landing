@@ -23,7 +23,7 @@ console.log(loaded, "loaded");
   return (
 
     <>
-      {/*
+      
       
       {showCheck &&
         <div className='toggle-div'>
@@ -40,7 +40,7 @@ console.log(loaded, "loaded");
         </div>
 
       }
-*/}
+
       <Canvas>
         <Exp explore3D={explore3D} isMouseDown={isMouseDown} />
       </Canvas>
