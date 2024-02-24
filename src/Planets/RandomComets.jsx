@@ -53,7 +53,7 @@ const Comet = ({ position }) => {
 
   return (
     <group ref={cometRef} position={position}>
-      <mesh>
+      <mesh scale={0.0001}>
         <sphereGeometry args={[2, 32, 32]} />
         <meshBasicMaterial color="black" />
       </mesh>
@@ -73,7 +73,7 @@ const RandomComets = ({ numberOfComets }) => {
     setComets(prevComets => [...prevComets, newComet]);
   };
 
-  useInterval(spawnComet, 2000);
+  useInterval(spawnComet, 100);
 
   return <>{comets}</>;
 };
