@@ -1,11 +1,22 @@
 import React from 'react'
-import 'Loader.css'
+import './loader.css'
 const Loading = () => {
-  return (
-    <>
-      
-    </>
-  )
+    return (
+        <>
+            <div className="center">
+                <div className="wave"></div>
+                <div className="wave"></div>
+                <div className="wave"></div>
+                <div className="wave"></div>
+                <div className="wave"></div>
+                <div className="wave"></div>
+                <div className="wave"></div>
+                <div className="wave"></div>
+                <div className="wave"></div>
+                <div className="wave"></div>
+            </div>
+        </>
+    )
 }
 
 export default Loading

@@ -54,7 +54,7 @@ const Planets = () => {
                 <meshBasicMaterial map={rocketTexture} map-flipY={false} />
             </mesh>
             <Himu_planet />
-            <RandomComets numberOfComets={1000} />
+            <RandomComets  />
 
         </>
     )

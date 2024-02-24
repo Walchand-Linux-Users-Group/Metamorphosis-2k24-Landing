@@ -1,12 +1,10 @@
 import './App.css'
 import { Canvas } from '@react-three/fiber'
-import Portal from './Components/Portal'
-import Planets from './Components/Planets';
-import { OrbitControls, useProgress } from '@react-three/drei';
+import { useProgress } from '@react-three/drei';
 import Exp from './Exp';
 import { useEffect, useState } from 'react';
 import './toggle.css'
-import metaSvg from '../Meta24.svg'
+import Loading from './Components/Loading';
 function App() {
   const [explore3D, setExplore3D] = useState(false)
   const [isMouseDown, setIsMouseDown] = useState(false)
@@ -24,9 +22,9 @@ function App() {
     <>
       {
         !showCheck &&
-        <div className='loader-container'>
-          <img src={metaSvg} alt="Loading" className='loader-svg' />
-        </div>
+        <>
+          <Loading />
+        </>
       }
       {showCheck &&
         <div className='toggle-div'>

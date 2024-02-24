@@ -62,7 +62,7 @@ const Comet = ({ position }) => {
   );
 };
 
-const RandomComets = ({ numberOfComets }) => {
+const RandomComets = () => {
   const [comets, setComets] = useState([]);
 
   const spawnComet = () => {
@@ -73,7 +73,7 @@ const RandomComets = ({ numberOfComets }) => {
     setComets(prevComets => [...prevComets, newComet]);
   };
 
-  useInterval(spawnComet, 500);
+  useInterval(spawnComet, 800);
 
   return <>{comets}</>;
 };
