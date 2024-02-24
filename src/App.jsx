@@ -10,19 +10,16 @@ function App() {
   const [explore3D, setExplore3D] = useState(false)
   const [isMouseDown, setIsMouseDown] = useState(false)
   const [showCheck, setShowCheck] = useState(true)
-
   const { loaded } = useProgress()
-console.log(loaded, "loaded");
+  console.log(loaded, "loaded");
   useEffect(() => {
-    // console.log(loaded, "loaded")
     if (loaded >= 47) { // 45 as console log shows 46
-      // console.log('loaded')
       setShowCheck(true)
     }
   }, [loaded])
   return (
 
-    <>
+    <>{!showCheck && <div className="loading">Loading...</div>}
       {showCheck &&
         <div className='toggle-div'>
           <label className="label">
@@ -35,8 +32,8 @@ console.log(loaded, "loaded");
             <div className="label-text">Explore 3D</div>
           </label>
         </div>
-
       }
+
 
       <Canvas>
         <Exp explore3D={explore3D} isMouseDown={isMouseDown} />

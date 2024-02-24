@@ -39,7 +39,7 @@ const Exp = ({ explore3D, isMouseDown }) => {
             // console.log(state.camera.position)
             // if(!isMouseDown){
             state.camera.lookAt(0, 10, 0)
-            easing.damp3(state.camera.position, [-3, 0, 25], 2, delta)
+            easing.damp3(state.camera.position, [-3, 0, 20], 2, delta)
             //   setSnpped(true)
             // }
         })
@@ -47,8 +47,8 @@ const Exp = ({ explore3D, isMouseDown }) => {
 
 
         return <OrbitControls
-            minAzimuthAngle={(-Math.PI / 180) * 15}
-            maxAzimuthAngle={(Math.PI / 180) * 15}
+            minAzimuthAngle={(-Math.PI / 180) * 30}
+            maxAzimuthAngle={(Math.PI / 180) * 30}
             minPolarAngle={(Math.PI / 180) * 60}
             maxPolarAngle={(Math.PI / 180) * 80}
             // enableZoom={isMobile ? false : true}
