@@ -33,6 +33,7 @@ console.log(loaded, "loaded");
               <div className="indicator"></div>
             </div>
             <div className="label-text">Explore 3D</div>
+            <div className="label-text">To register, Click the portal</div>
           </label>
         </div>
 
