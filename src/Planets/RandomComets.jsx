@@ -28,7 +28,7 @@ const Comet = ({ position }) => {
     (Math.random() - 0.5) * 5,
     (Math.random() - 0.5) * 5
   );
-  const tailSegments = 100; // Number of segments in the tail
+  const tailSegments = 50; // Number of segments in the tail
   const tailGeometry = new THREE.BufferGeometry().setFromPoints(new Array(tailSegments).fill().map(() => new THREE.Vector3()));
   const tailPositions = tailGeometry.attributes.position.array;
 
@@ -73,7 +73,7 @@ const RandomComets = ({ numberOfComets }) => {
     setComets(prevComets => [...prevComets, newComet]);
   };
 
-  useInterval(spawnComet, 100);
+  useInterval(spawnComet, 500);
 
   return <>{comets}</>;
 };

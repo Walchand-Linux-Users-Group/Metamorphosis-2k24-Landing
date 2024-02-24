@@ -6,25 +6,28 @@ import { OrbitControls, useProgress } from '@react-three/drei';
 import Exp from './Exp';
 import { useEffect, useState } from 'react';
 import './toggle.css'
+import metaSvg from '../Meta24.svg'
 function App() {
   const [explore3D, setExplore3D] = useState(false)
   const [isMouseDown, setIsMouseDown] = useState(false)
-  const [showCheck, setShowCheck] = useState(true)
+  const [showCheck, setShowCheck] = useState(false)
 
   const { loaded } = useProgress()
-console.log(loaded, "loaded");
   useEffect(() => {
-    // console.log(loaded, "loaded")
-    if (loaded >= 47) { // 45 as console log shows 46
-      // console.log('loaded')
+    console.log(loaded);
+    if (loaded >= 14) {
       setShowCheck(true)
     }
   }, [loaded])
   return (
 
     <>
-      
-      
+      {
+        !showCheck &&
+        <div className='loader-container'>
+          <img src={metaSvg} alt="Loading" className='loader-svg' />
+        </div>
+      }
       {showCheck &&
         <div className='toggle-div'>
           <label className="label">
