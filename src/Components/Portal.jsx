@@ -32,7 +32,7 @@ const Portal = () => {
         }
     };
     const portalClick = () => { 
-        window.location.href = 'https://meta-registration.wcewlug.org/';
+        window.location.href = 'https://metamorphosis.wcewlug.org'
         // console.log('Portal Clicked ! ! !'); 
     }
     const { nodes } = useGLTF('./Portal/portal.glb')
