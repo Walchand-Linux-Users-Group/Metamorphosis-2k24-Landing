@@ -17,9 +17,6 @@ const PortalMaterial = shaderMaterial(
 extend({ PortalMaterial: PortalMaterial })
 
 const Portal = () => {
-    const navigate = useNavigate()
-    const textii = useGLTF('/Planets/MetaText.glb')
-    
     const [text, setText] = useState('METAMORPHOSIS');
     const [hovered, setHovered] = useState(false);
 
@@ -88,7 +85,7 @@ const Portal = () => {
                     {text}
                 </Text3D>
             </group>
-            <group position={[-70, 80, -150]}>
+            <group position={[-80, 80, -150]}>
                 <Text3D
                  font='./Fonts/JSON/Helios Pro_Regular.json' 
                  size={0.75}
@@ -99,7 +96,7 @@ const Portal = () => {
                     rotation={[Math.PI/8,0,0]}
                 >
                     <meshBasicMaterial map={textTexture} map-flipY={false}   />
-                    Click on Portal to Register
+                    Click on Sword for Wargames ! ! !
                 </Text3D>
             </group>
              {/* <primitive object={textii.scene} position={[0,200,-150]} scale={2} /> */}

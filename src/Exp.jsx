@@ -117,7 +117,7 @@ const Exp = ({ explore3D, isMouseDown }) => {
             <Portal />
             <Planets />
             {/* <OrbitControls /> */}
-            <ambientLight intensity={1} />
+            <ambientLight intensity={10} />
             <CamControlDispatcher />
         </>
     )

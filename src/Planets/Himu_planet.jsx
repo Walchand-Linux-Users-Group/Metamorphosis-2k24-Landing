@@ -25,7 +25,7 @@ const Himu_planet = () => {
             {/*Rotate this mesh as a planet*/}
             <mesh
                 geometry={nodes.Blue_Giant.geometry}
-                position={[-400.76, 110.44, -400.83]}
+                position={[470.76, -10.44, -400.83]}
                 rotation={[-0.44, 0.29, 1.18]}
                 scale={35} 
                 ref={meshRef}
