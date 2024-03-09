@@ -5,7 +5,7 @@ import React, { useRef } from 'react'
 const Sword = () => {
     const { nodes, materials } = useGLTF('/Wargame/devilish_sword.glb')
     const texture = useTexture('/Wargame/Text_0.png')
-    console.log(nodes);
+    // console.log(nodes);
     const rocketRef1 = useRef();
     const rocketRef2 = useRef();
     const handleSword = () => {
@@ -22,7 +22,7 @@ const Sword = () => {
     <>
     <group  >
       <group scale={0.60} rotation={[-3*Math.PI/8,Math.PI,0]} position={[-100,35,-90]} ref={rocketRef1} onClick={handleSword} >
-        {/* <mesh geometry={nodes.flame__0.geometry} material={materials.flame__0} /> */}
+        <mesh geometry={nodes.flame__0.geometry} material={materials.flame__0} />
         <mesh geometry={nodes.Devilish_sword_Material_0.geometry} >
             <meshBasicMaterial map={texture} map-flipY={false} />
         </mesh>
