@@ -35,15 +35,6 @@ function App() {
               }} />
               <div className="indicator"></div>
               <div className="label-text">3D</div>
-              <div className="label-text">3D</div>
-              <div className="label-text">3D</div>
-              <div className="label-text">3D</div>
-              <div className="label-text">3D</div>
-              <div className="label-text">3D</div>
-              <div className="label-text">3D</div>
-              <div className="label-text">3D</div>
-              <div className="label-text">3D</div>
-              <div className="label-text">3D</div>
             </div>
           </label>
         </div>

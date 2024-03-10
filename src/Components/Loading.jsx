@@ -15,6 +15,7 @@ const Loading = () => {
                 <div className="wave"></div>
                 <div className="wave"></div>
             </div>
+            <h1 style={{ color: 'white' }} >Loading</h1>
         </>
     )
 }
