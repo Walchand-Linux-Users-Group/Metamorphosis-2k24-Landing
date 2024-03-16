@@ -5,7 +5,7 @@
 
 <br/><hr/>
 
-# Developers:
+# Developer:
 
 - ### [Jyotiraditya Patil](https://github.com/jyotiradityz/)
 
