@@ -11,7 +11,7 @@
 
 <br/><hr/>
 
-<p align="center">© 2023 WCEWLUG, ALL RIGHTS RESERVED</p>
+<p align="center">© 202 WCEWLUG, ALL RIGHTS RESERVED</p>
 
 <hr/>
 </div>
